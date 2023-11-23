@@ -1,30 +1,73 @@
-# Ília - Desafio Técnico
+<p align="center">
+  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
+</p>
 
-## Descrição
-Olá, e obrigado por aceitar realizar o desafio técnico do nosso processo seletivo! (:
+[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
+[circleci-url]: https://circleci.com/gh/nestjs/nest
 
-O desafio consiste na implementação de uma API de folha de ponto, descrita em api.yaml. Todas as informações necessárias sobre a construção da API estão contidas nesse arquivo.
+  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
+    <p align="center">
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
+<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
+<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
+<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
+<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
+<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
+<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
+  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
+    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
+  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
+</p>
+  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
+  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-O desafio será testado usando Docker. Certifique-se de que todo o ambiente necessário para a execução do projeto esteja descrito de maneira que seja possível testar o projeto apenas criando um container.
+## Description
 
-A API pode ser visualizada utilizando o [Swagger Editor](https://editor.swagger.io) com o arquivo yaml fornecido. 
+[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-## Q&A
-### Qual framework/linguagem devo utilizar?
-Para facilitar a avaliação do desafio, pedimos que ele seja realizado em .NET, Java ou NodeJS.
+## Installation
 
-### Como o meu projeto será avaliado?
-Os três prontos principais são os seguintes:
-- Ambiente: Como mencionado acima, é esperado que seja possível ter um ambiente com o projeto executando de maneira fácil e rápida. Qualquer instrução necessária para isso deve ser fornecida pelo desenvolvedor. Esse será o primeiro ponto a ser avaliado.
-- API: O ponto principal do teste é a implementação da API, exatamente como descrita no arquivo api.yaml. Os diferentes erros estão fornecidos como exemplos na documentação da API. Nenhum dos cenários descritos como erro na documentação deve ser permitido pelo serviço.
-- Testes: É esperado que, ao mínimo, sejam criados testes unitários para as funcionalidades implementadas no desafio.
-Além disso, naturalmente, o código do desafio será avaliado.
+```bash
+$ pnpm install
+```
 
-### Durante a implementação, encontrei um cenário que não está 100% claro para mim como deve ser implementado. Como devo proceder?
-Ao encontrar alguma situação além do que está descrito na documentação da API, faça da maneira que, na sua visão, faz mais sentido para o contexto de uma API de controle de folha de ponto.
+## Running the app
 
-### Terminei a implementação da API. É necessário fazer mais alguma coisa?
-Não há nenhum outro requisito fixo além dos especificados na documentação da API e nesse documento. Porém, pedimos que, dentro do prazo estabelecido, o desafio seja entregue da maneira mais completa possível. Será avaliado o que o candidato considera ser essencial para a entrega do projeto.
+```bash
+# development
+$ pnpm run start
 
-### Terminei o desafio. Como faço a entrega?
-Envie-nos por favor um link com o repositório para que possamos dar uma olhada no código. 😉
+# watch mode
+$ pnpm run start:dev
+
+# production mode
+$ pnpm run start:prod
+```
+
+## Test
+
+```bash
+# unit tests
+$ pnpm run test
+
+# e2e tests
+$ pnpm run test:e2e
+
+# test coverage
+$ pnpm run test:cov
+```
+
+## Support
+
+Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+
+## Stay in touch
+
+- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
+- Website - [https://nestjs.com](https://nestjs.com/)
+- Twitter - [@nestframework](https://twitter.com/nestframework)
+
+## License
+
+Nest is [MIT licensed](LICENSE).
