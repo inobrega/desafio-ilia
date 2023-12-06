@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Time Entries</title>
+    <!-- Inclua o CSS do Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h2>Time Entries</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Moment</th>
+            <th scope="col">User ID</th>
+            <!-- Adicione mais colunas conforme necessário -->
+        </tr>
+        </thead>
+        <tbody>
+        {% for timeEntry in timeEntries %}
+        <tr>
+            <th scope="row">{{ loop.index }}</th>
+            <td>{{ timeEntry.moment }}</td>
+            <td>{{ timeEntry.userId }}</td>
+            <!-- Adicione mais dados de timeEntry conforme necessário -->
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<!-- Inclua o JS do Bootstrap -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
