@@ -6,6 +6,7 @@ import { TimeEntryMapper } from '../application/mappers/time-entry.mapper';
 import { TimeEntryApplicationService } from '../application/services/time-entry.application.service';
 import { TimeEntryController } from './controllers/time-entry.controller';
 import { TimeEntryRepository } from './repositories/time-entry.repository';
+import { TimeEntryResolver } from '../presentation/graphql/time-entry.resolver';
 
 @Module({
   imports: [TypeOrmModule.forFeature([TimeEntry])],
@@ -18,6 +19,7 @@ import { TimeEntryRepository } from './repositories/time-entry.repository';
     TimeEntryDomainService,
     TimeEntryApplicationService,
     TimeEntryMapper,
+    TimeEntryResolver,
   ],
   exports: [TimeEntryApplicationService, TimeEntryDomainService],
 })

@@ -8,18 +8,23 @@ import {
   DeleteDateColumn,
 } from 'typeorm';
 import { TimeEntryType } from '../enums/time-entry-type.enum';
+import { Field, ObjectType } from '@nestjs/graphql';
 
 @Entity()
+@ObjectType()
 export class TimeEntry {
   @ObjectIdColumn()
-  id: ObjectId;
+  _id: ObjectId;
 
+  @Field()
   @Column()
   moment: Date;
 
+  @Field()
   @Column()
   userId: string;
 
+  @Field()
   @Column({
     type: 'enum',
     enum: TimeEntryType,
@@ -27,6 +32,7 @@ export class TimeEntry {
   })
   type: TimeEntryType;
 
+  @Field()
   @CreateDateColumn()
   createdAt: Date;
 
@@ -35,4 +41,8 @@ export class TimeEntry {
 
   @DeleteDateColumn()
   deletedAt?: Date;
+  @Field()
+  get id(): string {
+    return typeof this._id != 'string' ? this._id.toHexString() : this._id;
+  }
 }

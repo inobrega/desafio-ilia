@@ -40,12 +40,14 @@ export class TimeEntryApplicationService {
   }
 
   async update(id: string, timeEntryDto: TimeEntryDto): Promise<TimeEntryDto> {
-    let timeEntry = await this.timeEntryRepository.findOne(id);
+    const timeEntry = await this.timeEntryRepository.findOne(id);
     if (!timeEntry) {
       throw new NotFoundException(`Time Entry with ID "${id}" not found`);
     }
-
-    timeEntry = { ...timeEntry, ...TimeEntryMapper.toEntity(timeEntryDto) };
+    const timeEntryEntity = TimeEntryMapper.toEntity(timeEntryDto);
+    timeEntry.moment = timeEntryEntity.moment;
+    timeEntry.userId = timeEntryEntity.userId;
+    timeEntry.type = timeEntryEntity.type;
 
     const updatedTimeEntry = await this.timeEntryRepository.save(timeEntry);
     return TimeEntryMapper.toDto(updatedTimeEntry);
