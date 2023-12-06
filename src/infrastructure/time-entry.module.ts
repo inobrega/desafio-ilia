@@ -1,7 +1,8 @@
 import { Module } from '@nestjs/common';
+import { TimeEntryController } from './controllers/time-entry.controller';
 
 @Module({
-  controllers: [],
+  controllers: [TimeEntryController],
   providers: [],
 })
 export class TimeEntryModule {}
