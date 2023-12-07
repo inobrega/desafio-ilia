@@ -1,0 +1,262 @@
+{
+	"info": {
+		"_postman_id": "7d6f6052-ca41-46c2-b92d-696edfbf739b",
+		"name": "Ília",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3395467",
+		"_collection_link": "https://www.postman.com/ragnasoft/workspace/public/collection/3395467-7d6f6052-ca41-46c2-b92d-696edfbf739b?action=share&source=collection_link&creator=3395467"
+	},
+	"item": [
+		{
+			"name": "Http",
+			"item": [
+				{
+					"name": "Batidas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/v1/batidas",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"batidas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Batida Por Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/v1/batidas/657079bb41253e5a2417eb77",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"batidas",
+								"657079bb41253e5a2417eb77"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Salvar Batida",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"moment\": \"2023-01-01T08:22:00\",\n    \"type\": \"entry\",\n    \"userId\": \"some-uuid-example\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/v1/batidas",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"batidas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar Batida",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"moment\": \"2023-01-01T08:22:00\",\n    \"type\": \"entry\",\n    \"userId\": \"some-uuid-example-edited\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/v1/batidas/65707ab741253e5a2417eb78",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"batidas",
+								"65707ab741253e5a2417eb78"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remover Batida",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/v1/batidas/65707ab741253e5a2417eb78",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"v1",
+								"batidas",
+								"65707ab741253e5a2417eb78"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "GraphQL",
+			"item": [
+				{
+					"name": "Batidas - GraphQL",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query {\n  timeEntries {\n    id\n    moment\n    userId\n  }\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/graphql",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Batida por Id - GraphQL",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "query {\n  timeEntry(id: \"657189812f3fbefa7624b376\") {\n    id\n    moment\n    userId\n    type\n  }\n}\n",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/graphql",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Salvar Batida - GraphQL",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation {\n  createTimeEntry(input: {\n    moment: \"2023-01-01T10:00:00\",\n    type: \"entry\",\n    userId: \"user123\"\n  }) {\n    id\n    moment\n    userId\n  }\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/graphql",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Alterar Batida - GraphQL",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation {\n  updateTimeEntry(id: \"65707ab741253e5a2417eb78\", input: {\n    moment: \"2023-01-02T12:00:00\",\n    userId: \"user456-edited\",\n    type: \"entry\"\n  }) {\n    id\n    moment\n    userId\n  }\n}\n",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/graphql",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remover Batida - GraphQL",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "graphql",
+							"graphql": {
+								"query": "mutation {\n  deleteTimeEntry(id: \"6570c73c27dfa839f52fde99\")\n}",
+								"variables": ""
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/graphql",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"graphql"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

@@ -3,6 +3,7 @@ import { TimeEntryRepositoryInterface } from '../../domain/interfaces/time-entry
 import { TimeEntryDto } from '../dto/time-entry.dto';
 import { TimeEntryMapper } from '../mappers/time-entry.mapper';
 import { TimeEntryDomainService } from '../../domain/services/time-entry.service';
+import { ObjectId } from 'mongodb';
 
 /**
  * Atua como um intermediário que orquestra operações entre a camada de apresentação e a camada de domínio,
@@ -44,10 +45,9 @@ export class TimeEntryApplicationService {
     if (!timeEntry) {
       throw new NotFoundException(`Time Entry with ID "${id}" not found`);
     }
-    const timeEntryEntity = TimeEntryMapper.toEntity(timeEntryDto);
-    timeEntry.moment = timeEntryEntity.moment;
-    timeEntry.userId = timeEntryEntity.userId;
-    timeEntry.type = timeEntryEntity.type;
+    timeEntry.moment = new Date(timeEntryDto.moment);
+    timeEntry.userId = timeEntryDto.userId;
+    timeEntry.type = timeEntryDto.type;
 
     const updatedTimeEntry = await this.timeEntryRepository.save(timeEntry);
     return TimeEntryMapper.toDto(updatedTimeEntry);

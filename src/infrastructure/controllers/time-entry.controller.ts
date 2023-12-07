@@ -12,7 +12,7 @@ import {
 import { TimeEntryApplicationService } from '../../application/services/time-entry.application.service';
 import { TimeEntryDto } from '../../application/dto/time-entry.dto';
 
-@Controller('v1/time-entries')
+@Controller('v1/batidas')
 export class TimeEntryController {
   constructor(
     private readonly timeEntryAppService: TimeEntryApplicationService,

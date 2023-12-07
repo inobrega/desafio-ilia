@@ -28,6 +28,7 @@ export class TimeEntryResolver {
   async createTimeEntry(
     @Args('input') createDto: TimeEntryDto,
   ): Promise<TimeEntry> {
+    console.log(createDto);
     return TimeEntryMapper.toEntity(
       await this.timeEntryService.create(createDto),
     );

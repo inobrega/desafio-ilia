@@ -5,7 +5,7 @@ import { ObjectId } from 'mongodb';
 export class TimeEntryMapper {
   static toDto(entity: TimeEntry): TimeEntryDto {
     const dto = new TimeEntryDto();
-    dto.id = entity._id.toString();
+    dto.id = entity._id.toHexString();
     dto.moment = entity.moment.toISOString();
     dto.userId = entity.userId.toString();
     dto.type = entity.type;

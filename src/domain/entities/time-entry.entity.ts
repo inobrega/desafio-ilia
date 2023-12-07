@@ -9,6 +9,7 @@ import {
 } from 'typeorm';
 import { TimeEntryType } from '../enums/time-entry-type.enum';
 import { Field, ObjectType } from '@nestjs/graphql';
+import { ObjectId as ObjectIdInstance } from 'mongodb';
 
 @Entity()
 @ObjectType()
@@ -44,5 +45,9 @@ export class TimeEntry {
   @Field()
   get id(): string {
     return typeof this._id != 'string' ? this._id.toHexString() : this._id;
+  }
+
+  set id(id: string) {
+    this._id = new ObjectIdInstance(id);
   }
 }
