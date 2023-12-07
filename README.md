@@ -21,7 +21,12 @@ $ docker compose up --build
 
 Configurar primeiramente o arquivo .env com o apontamento correto para o MongoDB
 
-Em seguida:
+Em seguida, instalar as dependências da aplicação:
+
+```bash
+$ pnpm install
+```
+Agora só executar localmente:
 
 ```bash
 # ambiente de desenvolvimento
